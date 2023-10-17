@@ -1,0 +1,18 @@
+.navItem li {
+  padding: 5px 0;
+  position: relative;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navItem li:hover::before {
+  content: "";
+  width: 100%;
+  background-color: #fb81a8;
+  height: 3px;
+  left: 0px;
+  bottom: 0px;
+  position: absolute;
+  /* border-color: #fb81a8; */
+}
