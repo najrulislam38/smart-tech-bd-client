@@ -13,8 +13,8 @@ body {
 
 .primary-btn {
   color: white;
-  background-color: #e6487a;
-  font-size: 1.25rem;
+  background-color: #2550de;
+  font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -25,7 +25,7 @@ body {
 }
 
 .primary-btn:hover {
-  background-color: #ff8800;
+  background-color: #0b2238;
 }
 p {
   color: rgb(119, 119, 119);

@@ -9,10 +9,10 @@
 .navItem li:hover::before {
   content: "";
   width: 100%;
-  background-color: #e6487a;
+  background-color: #2550de;
   height: 3px;
   left: 0px;
   bottom: 0px;
   position: absolute;
-  /* border-color: #e6487a; */
+  /* border-color: #2550de; */
 }

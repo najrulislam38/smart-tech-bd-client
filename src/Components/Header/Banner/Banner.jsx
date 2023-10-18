@@ -8,7 +8,7 @@ const Banner = () => {
           </p>
           <h1 className="text-4xl md:text-5xl  font-bold font-fira-sans pt-2 pb-5 ">
             Discover the Latest in{" "}
-            <span className="text-[#e6487a]">
+            <span className="text-[#2550de]">
               Tech
               <br /> and Electronics
             </span>

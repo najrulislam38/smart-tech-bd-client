@@ -8,7 +8,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#e6487a]" : ""
+            isPending ? "pending" : isActive ? "text-[#2550de]" : ""
           }
         >
           Home
@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink
           to="/addProduct"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#e6487a]" : " "
+            isPending ? "pending" : isActive ? "text-[#2550de]" : " "
           }
         >
           Add Product
@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavLink
           to="/myCart"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#e6487a]" : ""
+            isPending ? "pending" : isActive ? "text-[#2550de]" : ""
           }
         >
           My Cart
@@ -103,8 +103,8 @@ const Navbar = () => {
             </div>
           ) : (
             <Link
-              to=""
-              className="text-white text-lg font-medium py-2 px-6 bg-[#e6487a] rounded-md hover:text-black duration-300 active:"
+              to="/login"
+              className="text-white text-lg font-medium py-2 px-6 bg-[#2550de] rounded-md hover:text-black duration-300 active:"
             >
               Login
             </Link>
