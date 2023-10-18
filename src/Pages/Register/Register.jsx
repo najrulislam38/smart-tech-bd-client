@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { signInWithGoogle, createUser } = useContext(AuthContext);
+  const { signInWithGoogle, createUser, setProfile } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleCreateUser = (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(name, photo, email, password);
+    // console.log(name, photo, email, password);
 
     // password validation for at least 6 character.
     if (password.length < 6) {
@@ -44,8 +46,12 @@ const Register = () => {
     }
 
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
+        setProfile(name, photo).then(() => {
+          Swal.fire("Successful!", "Sign up successfully.!", "success");
+          navigate("/");
+        });
       })
       .catch((error) => {
         console.log(error.message);
@@ -55,8 +61,9 @@ const Register = () => {
   // sign in use google
   const handleSignInGoogle = () => {
     signInWithGoogle()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
+
         Swal.fire("Successful!", "Sign In successfully.!", "success");
       })
       .catch((error) => {

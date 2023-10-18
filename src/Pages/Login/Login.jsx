@@ -11,12 +11,12 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     // signIn user
     signInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
         Swal.fire("Successful!", "Sign In successfully.!", "success");
       })
       .catch((error) => {
@@ -31,8 +31,8 @@ const Login = () => {
   // signIn by google
   const handleSignInGoogle = () => {
     signInWithGoogle()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
         Swal.fire("Good job!", "Sign In successful.!", "success");
       })
       .catch((error) => {

@@ -1,7 +1,28 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+
+  const { displayName, photoURL } = user || {};
+
+  const handleSignOutUser = () => {
+    signOutUser()
+      .then(() => {
+        Swal.fire("Successful!", "User Sign out successfully.!", "success");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
+      });
+  };
+
   const navLink = (
     <>
       <li>
@@ -37,7 +58,6 @@ const Navbar = () => {
     </>
   );
 
-  const user = false;
   return (
     <div className="w-full py-4 bg-base-100 shadow-md">
       <div className="flex justify-between items-center max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20">
@@ -78,17 +98,21 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  {user?.photoURL ? (
+                    <img src={photoURL} alt="user image" />
+                  ) : (
+                    <img src="/assets/user.png" />
+                  )}
                 </div>
               </label>
               <ul
                 tabIndex={0}
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
-                <li className="text-gray-700  text-center font-semibold">
+                <li className="text-gray-700  text-center font-semibold mb-2">
                   {user?.displayName ? (
                     <p className="py-2 text-center text-base font-fira-sans ">
-                      user
+                      {displayName}
                     </p>
                   ) : (
                     <p className="py-2 text-center font-poppins  text-base">
@@ -97,7 +121,12 @@ const Navbar = () => {
                   )}
                 </li>
                 <li>
-                  <a>Logout</a>
+                  <button
+                    onClick={handleSignOutUser}
+                    className="btn btn-sm w-full bg-[#2550de] text-white"
+                  >
+                    Log Out
+                  </button>
                 </li>
               </ul>
             </div>
