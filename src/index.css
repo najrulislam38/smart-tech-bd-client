@@ -10,3 +10,23 @@ body {
   box-sizing: border-box;
   font-family: "Hind Vadodara", sans-serif;
 }
+
+.primary-btn {
+  color: white;
+  background-color: #e6487a;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background-color: #ff8800;
+}
+p {
+  color: rgb(119, 119, 119);
+}
