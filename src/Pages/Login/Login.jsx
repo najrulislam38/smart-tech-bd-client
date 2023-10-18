@@ -4,8 +4,31 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { signInWithGoogle } = useContext(AuthContext);
+  const { signInWithGoogle, signInUser } = useContext(AuthContext);
 
+  const handleSignInUser = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    // signIn user
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire("Successful!", "Sign In successfully.!", "success");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
+      });
+  };
+
+  // signIn by google
   const handleSignInGoogle = () => {
     signInWithGoogle()
       .then((result) => {
@@ -17,14 +40,13 @@ const Login = () => {
           icon: "error",
           title: "Oops...",
           text: `${error.message}`,
-          footer: '<a href="">Why do I have this issue?</a>',
         });
       });
   };
   return (
     <div className="w-full md:my-10 lg:my-20 flex justify-center items-center">
       <div className="card pb-10 flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
-        <form className="card-body">
+        <form onSubmit={handleSignInUser} className="card-body">
           <h2 className="text-4xl font-fira-sans font-semibold">Sign In</h2>
           <div className="form-control">
             <label className="label">
@@ -32,7 +54,8 @@ const Login = () => {
             </label>
             <input
               type="email"
-              placeholder="email"
+              name="email"
+              placeholder="Email"
               className="input input-bordered"
               required
             />
@@ -43,7 +66,8 @@ const Login = () => {
             </label>
             <input
               type="password"
-              placeholder="password"
+              name="password"
+              placeholder="Password"
               className="input input-bordered"
               required
             />
@@ -54,7 +78,9 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn primary-btn">Sign In</button>
+            <button type="submit" className="btn primary-btn">
+              Sign In
+            </button>
           </div>
           <p className="mt-3">
             If do not have an account?{" "}

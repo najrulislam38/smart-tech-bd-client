@@ -4,13 +4,60 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { signInWithGoogle } = useContext(AuthContext);
+  const { signInWithGoogle, createUser } = useContext(AuthContext);
 
+  const handleCreateUser = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(name, photo, email, password);
+
+    // password validation for at least 6 character.
+    if (password.length < 6) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Your password should be at least 6 characters",
+      });
+    }
+
+    // password validation for at least one capital letter.
+    if (!/(?=.*[A-Z])/.test(password)) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password should have at least one uppercase letter.",
+      });
+    }
+
+    // password validation for at least  one specific character.
+    if (!/(?=.*[@#$%^&+=!])/.test(password)) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password should have at least one specific character.",
+      });
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  // sign in use google
   const handleSignInGoogle = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        Swal.fire("Good job!", "Sign In successful.!", "success");
+        Swal.fire("Successful!", "Sign In successfully.!", "success");
       })
       .catch((error) => {
         Swal.fire({
@@ -23,7 +70,7 @@ const Register = () => {
   return (
     <div className="w-full md:my-10 lg:my-20 flex justify-center items-center">
       <div className="card pb-10 flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
-        <form className="card-body">
+        <form onSubmit={handleCreateUser} className="card-body">
           <h2 className="text-4xl font-fira-sans font-semibold">Sign Up</h2>
           <div className="form-control">
             <label className="label">
@@ -46,7 +93,6 @@ const Register = () => {
               placeholder="Photo"
               name="photo"
               className="input input-bordered"
-              required
             />
           </div>
           <div className="form-control">
@@ -78,6 +124,11 @@ const Register = () => {
               </a>
             </label>
           </div>
+          <div className="form-control mt-6">
+            <button type="submit" className="btn primary-btn">
+              Sign UP
+            </button>
+          </div>
           <p className="mt-3">
             Already have an account?{" "}
             <Link
@@ -87,9 +138,6 @@ const Register = () => {
               Please Sign In
             </Link>
           </p>
-          <div className="form-control mt-6">
-            <button className="btn primary-btn">Sign UP</button>
-          </div>
         </form>
         <div className="divider mx-7 font-medium">Or</div>
         <div className="">
