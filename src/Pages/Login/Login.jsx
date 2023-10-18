@@ -1,6 +1,26 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { signInWithGoogle } = useContext(AuthContext);
+
+  const handleSignInGoogle = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire("Good job!", "Sign In successful.!", "success");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+          footer: '<a href="">Why do I have this issue?</a>',
+        });
+      });
+  };
   return (
     <div className="w-full md:my-10 lg:my-20 flex justify-center items-center">
       <div className="card pb-10 flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
@@ -48,9 +68,12 @@ const Login = () => {
         </form>
         <div className="divider mx-7 font-medium">Or</div>
         <div className="">
-          <div className="flex flex-row-reverse justify-between items-center mx-7 border py-2 px-3 rounded-full  cursor-pointer hover:bg-base-200">
+          <div
+            onClick={handleSignInGoogle}
+            className="flex flex-row-reverse justify-between items-center mx-7 border py-2 px-3 rounded-full  cursor-pointer hover:bg-base-200"
+          >
             <span className="font-medium font-fira-sans">
-              Sign up with google
+              Sign in with google
             </span>
             <img
               src="/assets/google-icons.png"

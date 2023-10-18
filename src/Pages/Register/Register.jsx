@@ -1,6 +1,25 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+  const { signInWithGoogle } = useContext(AuthContext);
+
+  const handleSignInGoogle = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire("Good job!", "Sign In successful.!", "success");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
+      });
+  };
   return (
     <div className="w-full md:my-10 lg:my-20 flex justify-center items-center">
       <div className="card pb-10 flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
@@ -74,7 +93,10 @@ const Register = () => {
         </form>
         <div className="divider mx-7 font-medium">Or</div>
         <div className="">
-          <div className="flex flex-row-reverse justify-between items-center mx-7 border py-2 px-3 rounded-full  cursor-pointer">
+          <div
+            onClick={handleSignInGoogle}
+            className="flex flex-row-reverse justify-between items-center mx-7 border py-2 px-3 rounded-full  cursor-pointer"
+          >
             <span className="font-medium font-fira-sans">
               Sign up with google
             </span>
