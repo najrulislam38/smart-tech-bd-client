@@ -7,11 +7,11 @@ const ProductDetails = () => {
   const { image, name, brandName, type, price, description } = product;
   return (
     <div className="max-w-screen-2xl mx-auto my-20 px-5 md:px-10 lg:px-20">
-      <div className="max-w-2xl mx-auto p-5 md:p-10">
+      <div className="max-w-2xl mx-auto p-5 md:p-10  bg-base-100">
         <div className="w-full flex justify-center items-center">
           <img src={image} alt="" />
         </div>
-        <div className="mt-10 mb-5">
+        <div className="mt-20 mb-5">
           <span className="border rounded-md text-lg py-1  px-3 bg-[#EEEEEE] font-medium">
             {type}
           </span>
