@@ -33,8 +33,8 @@ const Login = () => {
   // signIn by google
   const handleSignInGoogle = () => {
     signInWithGoogle()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
         Swal.fire("Good job!", "Sign In successful.!", "success");
         navigate(location?.state ? location.state : "/");
       })

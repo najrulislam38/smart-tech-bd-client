@@ -14,11 +14,13 @@ import Intel from "../Pages/Intel/Intel";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../Pages/UpateProduct/UpdateProduct";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
