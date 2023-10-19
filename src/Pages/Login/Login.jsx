@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { signInWithGoogle, signInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignInUser = (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const Login = () => {
       .then(() => {
         // console.log(result.user);
         Swal.fire("Successful!", "Sign In successfully.!", "success");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         Swal.fire({
@@ -34,6 +36,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         Swal.fire("Good job!", "Sign In successful.!", "success");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         Swal.fire({

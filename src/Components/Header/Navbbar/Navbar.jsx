@@ -35,26 +35,30 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/addProduct"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#2550de]" : " "
-          }
-        >
-          Add Product
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/myCart"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#2550de]" : ""
-          }
-        >
-          My Cart
-        </NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to="/addProduct"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#2550de]" : " "
+              }
+            >
+              Add Product
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/myCart"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#2550de]" : ""
+              }
+            >
+              My Cart
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
