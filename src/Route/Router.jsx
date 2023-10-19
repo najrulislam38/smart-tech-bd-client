@@ -42,44 +42,48 @@ const Router = createBrowserRouter([
       {
         path: "/apple",
         element: <Apple></Apple>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://smart-tech-bd-server.vercel.app/products"),
       },
       {
         path: "/samsung",
         element: <Samsung></Samsung>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://smart-tech-bd-server.vercel.app/products"),
       },
       {
         path: "/dell",
         element: <Dell></Dell>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://smart-tech-bd-server.vercel.app/products"),
       },
       {
         path: "/google",
         element: <Google></Google>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://smart-tech-bd-server.vercel.app/products"),
       },
       {
         path: "/sony",
         element: <Sony></Sony>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://smart-tech-bd-server.vercel.app/products"),
       },
       {
         path: "/intel",
         element: <Intel></Intel>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://smart-tech-bd-server.vercel.app/products"),
       },
       {
         path: "/products/:id",
         element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://smart-tech-bd-server.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
         element: <UpdateProduct></UpdateProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://smart-tech-bd-server.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },
