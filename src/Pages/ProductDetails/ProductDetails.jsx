@@ -1,10 +1,38 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { FaDollarSign } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const product = useLoaderData();
   // console.log(product);
-  const { image, name, brandName, type, price, description } = product;
+  const { image, name, brandName, type, price, rating, description } = product;
+
+  const newProduct = {
+    image,
+    name,
+    brandName,
+    type,
+    price,
+    rating,
+    description,
+  };
+
+  const handleAddProduct = () => {
+    fetch("http://localhost:5000/addProducts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.insertedId) {
+          Swal.fire("Successful!", "Add to Cart success.!", "success");
+        }
+      });
+  };
   return (
     <div className="max-w-screen-2xl mx-auto my-20 px-5 md:px-10 lg:px-20">
       <div className="max-w-2xl mx-auto p-5 md:p-10  bg-base-100">
@@ -33,9 +61,9 @@ const ProductDetails = () => {
             {description}
           </p>
           <div className=" flex items-center gap-5 mt-6">
-            <Link>
-              <button className="primary-btn">Add to Cart</button>
-            </Link>
+            <button onClick={handleAddProduct} className="primary-btn">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

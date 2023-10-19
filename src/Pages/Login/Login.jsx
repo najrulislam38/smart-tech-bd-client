@@ -31,8 +31,8 @@ const Login = () => {
   // signIn by google
   const handleSignInGoogle = () => {
     signInWithGoogle()
-      .then(() => {
-        // console.log(result.user);
+      .then((result) => {
+        console.log(result.user);
         Swal.fire("Good job!", "Sign In successful.!", "success");
       })
       .catch((error) => {
