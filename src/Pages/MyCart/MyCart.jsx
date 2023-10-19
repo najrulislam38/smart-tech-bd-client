@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleProductCard from "./singleProductCard";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
   const loadedAddProducts = useLoaderData();
@@ -8,15 +9,34 @@ const MyCart = () => {
   const [displayProducts, setDisplayProducts] = useState(loadedAddProducts);
 
   const handleDeleteProduct = (id) => {
-    fetch(`http://localhost:5000/addProducts/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-    const remainingProduct = loadedAddProducts.filter((pro) => pro._id !== id);
-    setDisplayProducts(remainingProduct);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/addProducts/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            Swal.fire(
+              "Deleted!",
+              "Your purchase product has been deleted.",
+              "success"
+            );
+          });
+        const remainingProduct = displayProducts.filter(
+          (pro) => pro._id !== id
+        );
+        setDisplayProducts(remainingProduct);
+      }
+    });
   };
 
   return (

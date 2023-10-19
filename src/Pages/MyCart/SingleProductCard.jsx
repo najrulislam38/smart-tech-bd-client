@@ -12,8 +12,8 @@ const SingleProductCard = ({ product, handleDeleteProduct }) => {
         <span className="border rounded-md text-lg py-1 px-3 bg-[#EEEEEE] font-medium">
           {type}
         </span>
-        <h2 className="text-3xl font-fira-sans pt-3 font-medium">{name}</h2>
-        <h3 className="text-2xl font-medium">{brandName}</h3>
+        <h2 className="text-2xl font-fira-sans pt-3 font-medium">{name}</h2>
+        <h3 className="text-xl font-medium">{brandName}</h3>
         <p className="">
           <span className="text-black font-medium">Price: </span>
           {price}
