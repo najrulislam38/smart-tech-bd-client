@@ -24,6 +24,23 @@ body {
   transition: 0.3s;
 }
 
+.secondary-btn {
+  color: white;
+  background-color: #1aacac;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.secondary-btn:hover {
+  background-color: #2e97a7;
+}
+
 .primary-btn:hover {
   background-color: #0b2238;
 }

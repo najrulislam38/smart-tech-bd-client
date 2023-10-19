@@ -11,6 +11,7 @@ import Dell from "../Pages/Dell/Dell";
 import Google from "../Pages/Google/Google";
 import Sony from "../Pages/Sony/Sony";
 import Intel from "../Pages/Intel/Intel";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 
 const Router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const Router = createBrowserRouter([
       {
         path: "/apple",
         element: <Apple></Apple>,
+        loader: () => fetch("http://localhost:5000/products"),
       },
       {
         path: "/samsung",
@@ -56,6 +58,12 @@ const Router = createBrowserRouter([
       {
         path: "/sony",
         element: <Sony></Sony>,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
         path: "/intel",

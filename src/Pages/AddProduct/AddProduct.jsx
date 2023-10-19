@@ -2,9 +2,36 @@ const AddProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
     const form = e.target;
-    // const type = form.type.vale;
+    const image = form.image.value;
+    const name = form.name.value;
+    const brandName = form.brandName.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
     const description = form.description.value;
-    console.log(description);
+
+    const product = {
+      image,
+      name,
+      brandName,
+      type,
+      price,
+      rating,
+      description,
+    };
+
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        form.reset();
+      });
   };
   return (
     <div className="max-w-screen-2xl mx-auto py-10 px-5 md:px-10 lg:px-20 flex justify-center items-center ">
@@ -19,7 +46,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 placeholder="Image"
-                name="Image"
+                name="image"
                 className="input input-bordered"
                 required
               />
