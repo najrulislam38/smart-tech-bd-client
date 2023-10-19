@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { signInWithGoogle, signInUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   const handleSignInUser = (e) => {
     e.preventDefault();
