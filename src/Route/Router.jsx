@@ -12,6 +12,7 @@ import Google from "../Pages/Google/Google";
 import Sony from "../Pages/Sony/Sony";
 import Intel from "../Pages/Intel/Intel";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import UpdateProduct from "../Pages/UpateProduct/UpdateProduct";
 
 const Router = createBrowserRouter([
   {
@@ -60,14 +61,20 @@ const Router = createBrowserRouter([
         element: <Sony></Sony>,
       },
       {
+        path: "/intel",
+        element: <Intel></Intel>,
+      },
+      {
         path: "/products/:id",
         element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
-        path: "/intel",
-        element: <Intel></Intel>,
+        path: "/update/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
     ],
   },

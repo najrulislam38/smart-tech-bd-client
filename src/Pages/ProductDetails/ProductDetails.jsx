@@ -3,8 +3,8 @@ import { FaDollarSign } from "react-icons/fa";
 
 const ProductDetails = () => {
   const product = useLoaderData();
-  console.log(product);
-  const { _id, image, name, brandName, type, price, description } = product;
+  // console.log(product);
+  const { image, name, brandName, type, price, description } = product;
   return (
     <div className="max-w-screen-2xl mx-auto my-20 px-5 md:px-10 lg:px-20">
       <div className="max-w-2xl mx-auto p-5 md:p-10">
