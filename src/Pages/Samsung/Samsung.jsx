@@ -11,12 +11,26 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Samsung = () => {
   const loadProducts = useLoaderData();
+  const { loading } = useContext(AuthContext);
+
   const samsungProducts = loadProducts?.filter(
     (product) => product.brandName.toLowerCase() === "Samsung".toLowerCase()
   );
+
+  if (loading) {
+    return (
+      <>
+        <div className="w-full h-screen flex justify-center items-center">
+          <span className="loading loading-dots loading-lg"></span>
+        </div>
+      </>
+    );
+  }
 
   return (
     <div
