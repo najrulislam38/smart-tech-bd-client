@@ -19,7 +19,12 @@ const Google = () => {
   );
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20">
+    <div
+      data-aos="zoom-in"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1000"
+      className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20"
+    >
       <div>
         <Swiper
           slidesPerView={1}

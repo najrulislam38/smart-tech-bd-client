@@ -7,7 +7,12 @@ const Home = () => {
   return (
     <>
       <main className=" max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20">
-        <section className="my-10 lg:mb-20">
+        <section
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1000"
+          className="my-10 lg:mb-20"
+        >
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {/* apple brand */}
             <Link

@@ -7,7 +7,12 @@ const ProductCard = ({ product }) => {
   const { _id, image, name, brandName, type, price, rating, description } =
     product;
   return (
-    <div className="border p-5 md:p-7 min-h-[450px] flex flex-col ">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1000"
+      className="border p-5 md:p-7 min-h-[450px] flex flex-col "
+    >
       <div className="w-full flex justify-center items-center flex-1">
         <img src={image} alt="" />
       </div>

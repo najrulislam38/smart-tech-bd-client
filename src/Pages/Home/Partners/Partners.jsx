@@ -1,6 +1,10 @@
 const Partners = () => {
   return (
-    <div>
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1500"
+    >
       <div>
         <h2 className="text-4xl font-fira-sans font-medium mb-3">
           Trusted Partners

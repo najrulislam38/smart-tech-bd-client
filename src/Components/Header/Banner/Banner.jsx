@@ -1,6 +1,11 @@
 const Banner = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto py-10 lg:py-20 px-5 md:px-10 lg:px-20">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1000"
+      className="max-w-screen-2xl mx-auto py-10 lg:py-20 px-5 md:px-10 lg:px-20"
+    >
       <div className="banner-container flex flex-col lg:flex-row gap-10 justify-between items-center ">
         <div className="w-full lg:w-1/2">
           <p className="text-red-500 font-medium">

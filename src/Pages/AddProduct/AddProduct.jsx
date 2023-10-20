@@ -40,7 +40,12 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="max-w-screen-2xl mx-auto py-10 px-5 md:px-10 lg:px-20 flex justify-center items-center ">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1000"
+      className="max-w-screen-2xl mx-auto py-10 px-5 md:px-10 lg:px-20 flex justify-center items-center "
+    >
       <div className="w-full">
         <h1 className="text-3xl text-center font-fira-sans font-medium">
           Add Product

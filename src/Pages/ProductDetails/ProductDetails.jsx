@@ -34,7 +34,12 @@ const ProductDetails = () => {
       });
   };
   return (
-    <div className="max-w-screen-2xl mx-auto py-20 px-5 md:px-10 lg:px-20">
+    <div
+      data-aos="zoom-in"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1000"
+      className="max-w-screen-2xl mx-auto py-20 px-5 md:px-10 lg:px-20"
+    >
       <div className="max-w-2xl mx-auto p-5 md:p-10">
         <div className="w-full flex justify-center items-center">
           <img src={image} alt="" />

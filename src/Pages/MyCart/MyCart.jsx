@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleProductCard from "./singleProductCard";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyCart = () => {
   const loadedAddProducts = useLoaderData();
+  const { loading } = useContext(AuthContext);
 
   const [displayProducts, setDisplayProducts] = useState(loadedAddProducts);
 
@@ -39,8 +41,23 @@ const MyCart = () => {
     });
   };
 
+  if (loading) {
+    return (
+      <>
+        <div className="w-full h-screen flex justify-center items-center">
+          <span className="loading loading-dots loading-lg"></span>
+        </div>
+      </>
+    );
+  }
+
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20 py-20 min-h-[60vh]">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1000"
+      className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20 py-20 min-h-[60vh]"
+    >
       {displayProducts?.length < 1 ? (
         <div>
           <h2 className="text-4xl lg:text-5xl text-center font-fira-sans font-medium ">

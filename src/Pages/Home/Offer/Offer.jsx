@@ -1,6 +1,11 @@
 const Offer = () => {
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-10  justify-between items-center bg-gradient-to-r from-cyan-500 to-[#2550de]">
+    <div
+      data-aos="zoom-in-right"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1000"
+      className="w-full flex flex-col lg:flex-row gap-10  justify-between items-center bg-gradient-to-r from-cyan-500 to-[#2550de]"
+    >
       <div className="w-full lg:w-1/2">
         <img src="/assets/iphone-15-pro-max.png" className="w-full" />
       </div>
