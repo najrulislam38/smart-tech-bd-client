@@ -4,11 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+.dark-theme {
+  color: var(--white-color);
+  background-color: var(--black-color);
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Hind Vadodara", sans-serif;
+  background-color: #fff;
 }
 
 .primary-btn {

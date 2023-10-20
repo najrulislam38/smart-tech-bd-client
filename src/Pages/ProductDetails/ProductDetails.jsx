@@ -18,7 +18,7 @@ const ProductDetails = () => {
   };
 
   const handleAddProduct = () => {
-    fetch("http://localhost:5000/addProducts", {
+    fetch("https://smart-tech-bd-server.vercel.app/addProducts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -34,8 +34,8 @@ const ProductDetails = () => {
       });
   };
   return (
-    <div className="max-w-screen-2xl mx-auto my-20 px-5 md:px-10 lg:px-20">
-      <div className="max-w-2xl mx-auto p-5 md:p-10  bg-base-100">
+    <div className="max-w-screen-2xl mx-auto py-20 px-5 md:px-10 lg:px-20">
+      <div className="max-w-2xl mx-auto p-5 md:p-10">
         <div className="w-full flex justify-center items-center">
           <img src={image} alt="" />
         </div>
@@ -57,8 +57,7 @@ const ProductDetails = () => {
             </div>
           </div>
           <p>
-            <span className=" text-black font-medium">Description: </span>{" "}
-            {description}
+            <span className=" font-medium">Description: </span> {description}
           </p>
           <div className=" flex items-center gap-5 mt-6">
             <button onClick={handleAddProduct} className="primary-btn">

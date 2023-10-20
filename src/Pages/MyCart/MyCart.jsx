@@ -19,7 +19,7 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addProducts/${id}`, {
+        fetch(`https://smart-tech-bd-server.vercel.app/addProducts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -40,7 +40,7 @@ const MyCart = () => {
   };
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20 my-20 min-h-[60vh]">
+    <div className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20 py-20 min-h-[60vh]">
       {displayProducts?.length < 1 ? (
         <div>
           <h2 className="text-4xl lg:text-5xl text-center font-fira-sans font-medium ">

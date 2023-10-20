@@ -41,7 +41,8 @@ const Router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/addProducts"),
+        loader: () =>
+          fetch("https://smart-tech-bd-server.vercel.app/addProducts"),
       },
       {
         path: "/login",

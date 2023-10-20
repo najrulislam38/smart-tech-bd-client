@@ -4,7 +4,7 @@ const SingleProductCard = ({ product, handleDeleteProduct }) => {
   const { _id, image, name, brandName, type, price } = product;
 
   return (
-    <div className=" flex flex-col gap-6 min-h-[450px] border p-8 bg-base-100 shadow-md ">
+    <div className=" flex flex-col gap-6 min-h-[450px] border p-8 shadow-md ">
       <div className="w-full  flex justify-center items-center flex-1">
         <img src={image} alt="" className="w-[200px] h-[200px]" />
       </div>

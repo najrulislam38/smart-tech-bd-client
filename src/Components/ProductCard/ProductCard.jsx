@@ -7,14 +7,14 @@ const ProductCard = ({ product }) => {
   const { _id, image, name, brandName, type, price, rating, description } =
     product;
   return (
-    <div className="border p-5 md:p-7 min-h-[450px] flex flex-col">
+    <div className="border p-5 md:p-7 min-h-[450px] flex flex-col ">
       <div className="w-full flex justify-center items-center flex-1">
         <img src={image} alt="" />
       </div>
       <div className="my-5  ">
-        <h3 className="text-3xl font-fira-sans font-medium">{name}</h3>
+        <h3 className="text-2xl font-fira-sans font-medium">{name}</h3>
         <div className="flex justify-between items-center py-3">
-          <h4 className="text-3xl font-fira-sans">{brandName}</h4>
+          <h4 className="text-2xl font-fira-sans">{brandName}</h4>
           <span className="border rounded-md text-lg py-1 px-3 bg-[#EEEEEE] font-medium">
             {type}
           </span>

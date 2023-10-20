@@ -44,7 +44,7 @@ const Apple = () => {
           </Swiper>
         </>
       </div>
-      <div className="my-20">
+      <div className="py-20">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 ">
           {appleProducts?.map((product) => (
             <ProductCard key={product._id} product={product}></ProductCard>
