@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleProductCard from "./singleProductCard";
 import Swal from "sweetalert2";
@@ -6,9 +6,19 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyCart = () => {
   const loadedAddProducts = useLoaderData();
-  const { loading } = useContext(AuthContext);
-
   const [displayProducts, setDisplayProducts] = useState(loadedAddProducts);
+  const { user, loading } = useContext(AuthContext);
+
+  const email = user.email;
+
+  console.log(email);
+
+  useEffect(() => {
+    const userProducts = loadedAddProducts?.filter(
+      (product) => product.email === email
+    );
+    setDisplayProducts(userProducts);
+  }, [loadedAddProducts, email]);
 
   const handleDeleteProduct = (id) => {
     Swal.fire({
@@ -66,7 +76,7 @@ const MyCart = () => {
         </div>
       ) : (
         <div>
-          <h2 className="text-4xl lg:text-5xl text-center font-fira-sans font-medium ">
+          <h2 className="text-4xl lg:text-4xl text-center font-fira-sans font-medium ">
             My Products
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">

@@ -1,9 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { FaDollarSign } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const ProductDetails = () => {
   const product = useLoaderData();
+
+  const { user } = useContext(AuthContext);
+
+  const email = user?.email;
   // console.log(product);
   const { image, name, brandName, type, price, rating, description } = product;
 
@@ -15,6 +21,7 @@ const ProductDetails = () => {
     price,
     rating,
     description,
+    email,
   };
 
   const handleAddProduct = () => {
