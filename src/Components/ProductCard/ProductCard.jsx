@@ -1,6 +1,6 @@
+import { Rating } from "@mui/material";
 import PropTypes from "prop-types";
 import { FaDollarSign } from "react-icons/fa";
-import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
@@ -26,7 +26,12 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="flex justify-between items-center p-2">
           <div>
-            <Rating initialRating={rating} readonly />
+            <Rating
+              name="half-rating"
+              defaultValue={rating}
+              precision={0.5}
+              readOnly
+            />
           </div>
           <div className="flex items-center gap-2 text-lg">
             <span>Price: </span>

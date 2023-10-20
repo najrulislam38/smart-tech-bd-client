@@ -63,8 +63,8 @@ const Register = () => {
     signInWithGoogle()
       .then(() => {
         // console.log(result.user);
-
         Swal.fire("Successful!", "Sign In successfully.!", "success");
+        navigate("/");
       })
       .catch((error) => {
         Swal.fire({

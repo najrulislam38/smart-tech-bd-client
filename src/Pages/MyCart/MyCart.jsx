@@ -11,7 +11,7 @@ const MyCart = () => {
 
   const email = user.email;
 
-  console.log(email);
+  // console.log(email);
 
   useEffect(() => {
     const userProducts = loadedAddProducts?.filter(

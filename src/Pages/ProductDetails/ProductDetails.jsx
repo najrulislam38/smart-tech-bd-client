@@ -3,6 +3,7 @@ import { FaDollarSign } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Rating } from "@mui/material";
 
 const ProductDetails = () => {
   const product = useLoaderData();
@@ -61,6 +62,15 @@ const ProductDetails = () => {
           <h4 className="text-3xl font-fira-sans">
             Brand Name: <span className="text-gray-600">{brandName}</span>
           </h4>
+          <div className="mt-3 flex items-center gap-2 ">
+            <span className="font-fira-sans font-medium ">Rating: </span>
+            <Rating
+              name="half-rating"
+              defaultValue={rating}
+              precision={0.5}
+              readOnly
+            />
+          </div>
           <div className="flex items-center gap-2 text-lg  py-2">
             <span>Price: </span>
             <div className="flex gap-1 items-center text-[#FB82A9]">
