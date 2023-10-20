@@ -23,7 +23,7 @@ const Sony = () => {
       data-aos="zoom-in"
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1000"
-      className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20"
+      className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20 min-h-[75vh]"
     >
       {sonyProducts.length < 1 ? (
         <div>

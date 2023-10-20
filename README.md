@@ -5,9 +5,13 @@
 ## About This Project.
 
 - At Smart Tech BD, we are passionate about all things technology and electronics. Our mission is to provide a one-stop destination for tech enthusiasts, hobbyists, and professionals seeking the latest gadgets, cutting-edge electronics, and expert insights in the ever-evolving world of technology.
+
 - Branded products of Apple, Google, Intel, Samsung, Sony, and Dell companies can be purchased through our website without any hassle.
+
 - Explore our carefully curated collection of top-notch electronics, sourced from renowned brands and manufacturers globally. Whether you're looking for state-of-the-art gaming gear, smart home devices, or the newest wearable tech, Smart Tech DB has you covered with a diverse selection tailored to meet your technological needs.
+
 - New users can create their accounts for free through the register form and Gmail.
+
 - Explore our carefully curated collection of top-notch electronics, sourced from renowned brands and manufacturers globally. Whether you're looking for state-of-the-art gaming gear, smart home devices, or the newest wearable tech, Smart Tech BD has you covered with a diverse selection tailored to meet your technological needs.
 
 - We prioritize quality and reliability above all else. Our stringent quality control measures ensure that every product featured on our platform meets the highest standards, providing you with a seamless and satisfying tech experience.

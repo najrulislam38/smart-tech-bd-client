@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "../../Components/Footer/Footer";
 import Offer from "./Offer/Offer";
 import Partners from "./Partners/Partners";
 
@@ -111,7 +110,6 @@ const Home = () => {
           <Offer></Offer>
         </section>
       </main>
-      <Footer></Footer>
     </>
   );
 };

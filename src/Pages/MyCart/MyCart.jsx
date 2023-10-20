@@ -36,12 +36,13 @@ const MyCart = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
-            Swal.fire(
-              "Deleted!",
-              "Your purchase product has been deleted.",
-              "success"
-            );
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Your purchase product has been deleted.",
+                "success"
+              );
+            }
           });
         const remainingProduct = displayProducts.filter(
           (pro) => pro._id !== id
@@ -66,7 +67,7 @@ const MyCart = () => {
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1000"
-      className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20 py-20 min-h-[60vh]"
+      className="max-w-screen-2xl mx-auto px-5 md:px-10 lg:px-20 py-20 min-h-[90vh]"
     >
       {displayProducts?.length < 1 ? (
         <div>

@@ -14,7 +14,7 @@ const SingleProductCard = ({ product, handleDeleteProduct }) => {
         <img src={image} alt="" className="w-[200px] h-[200px]" />
       </div>
       <div className="w-full ">
-        <span className="border rounded-md text-lg py-1 px-3 bg-[#EEEEEE] font-medium">
+        <span className="border rounded-md text-lg py-1 px-3 bg-[#EEEEEE] text-[#2550de] font-medium">
           {type}
         </span>
         <h2 className="text-2xl font-fira-sans pt-3 font-medium">{name}</h2>

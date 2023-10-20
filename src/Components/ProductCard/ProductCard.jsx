@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
         <h3 className="text-2xl font-fira-sans font-medium">{name}</h3>
         <div className="flex justify-between items-center py-3">
           <h4 className="text-2xl font-fira-sans">{brandName}</h4>
-          <span className="border rounded-md text-lg py-1 px-3 bg-[#EEEEEE] font-medium">
+          <span className="border rounded-md text-lg py-1 px-3 bg-[#EEEEEE] text-[#2550de] font-medium">
             {type}
           </span>
         </div>

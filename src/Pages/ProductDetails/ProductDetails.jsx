@@ -53,7 +53,7 @@ const ProductDetails = () => {
           <img src={image} alt="" />
         </div>
         <div className="mt-20 mb-5">
-          <span className="border rounded-md text-lg py-1  px-3 bg-[#EEEEEE] font-medium">
+          <span className="border rounded-md text-lg py-1  px-3 bg-[#EEEEEE] text-[#2550de] font-medium">
             {type}
           </span>
           <h3 className="text-3xl lg:text-4xl font-fira-sans font-medium py-2">
