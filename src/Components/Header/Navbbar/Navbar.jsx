@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
@@ -7,6 +7,7 @@ import handleToggle from "./DarkLightMode";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const { displayName, photoURL } = user || {};
 
@@ -14,6 +15,7 @@ const Navbar = () => {
     signOutUser()
       .then(() => {
         Swal.fire("Successful!", "User Sign out successfully.!", "success");
+        navigate("/login");
       })
       .catch((error) => {
         Swal.fire({

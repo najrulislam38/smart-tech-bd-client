@@ -76,7 +76,7 @@ const Register = () => {
   };
   return (
     <div className="w-full md:my-10 lg:my-20 flex justify-center items-center">
-      <div className="card pb-10 flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+      <div className="card pb-10 flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100 text-black">
         <form onSubmit={handleCreateUser} className="card-body">
           <h2 className="text-4xl font-fira-sans font-semibold">Sign Up</h2>
           <div className="form-control">
