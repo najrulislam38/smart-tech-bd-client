@@ -11,30 +11,27 @@ const ProductCard = ({ product }) => {
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1000"
-      className="border p-5 md:p-7 min-h-[450px] flex flex-col "
+      className="border p-5 md:p-7 min-h-[450px] flex flex-col bg-base-100 "
     >
       <div className="w-full flex justify-center items-center flex-1">
         <img src={image} alt="" />
       </div>
       <div className="my-5  ">
-        <h3 className="text-2xl font-fira-sans font-medium">{name}</h3>
+        <h3 className="text-2xl text-black font-fira-sans font-medium ">
+          {name}
+        </h3>
         <div className="flex justify-between items-center py-3">
-          <h4 className="text-2xl font-fira-sans">{brandName}</h4>
+          <h4 className="text-2xl text-black font-fira-sans">{brandName}</h4>
           <span className="border rounded-md text-lg py-1 px-3 bg-[#EEEEEE] text-[#2550de] font-medium">
             {type}
           </span>
         </div>
         <div className="flex justify-between items-center p-2">
           <div>
-            <Rating
-              name="half-rating"
-              defaultValue={rating}
-              precision={0.5}
-              readOnly
-            />
+            <Rating name="half-rating" defaultValue={rating} precision={0.5} />
           </div>
           <div className="flex items-center gap-2 text-lg">
-            <span>Price: </span>
+            <span className="text-black">Price: </span>
             <div className="flex gap-1 items-center text-[#FB82A9]">
               <FaDollarSign />
               <span className="font-medium ">{price}</span>

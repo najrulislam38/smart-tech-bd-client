@@ -16,7 +16,7 @@ const Home = () => {
             {/* apple brand */}
             <Link
               to="/apple"
-              className="w-full border shadow-md py-5 hover:bg-base-200 hover:text-[#2550de] duration-500"
+              className="w-full border shadow-md py-5 text-black bg-base-100 rounded-md hover:bg-base-200 hover:text-[#2550de] duration-300"
             >
               <div className="w-full h-[250px] flex justify-center items-start">
                 <img src="/assets/brand/mac-1.jpg" alt="mac-logo" />
@@ -30,7 +30,7 @@ const Home = () => {
             {/* intel brand */}
             <Link
               to="/intel"
-              className="w-full border shadow-md py-5 hover:text-[#2550de] hover:bg-base-200 duration-500"
+              className="w-full border shadow-md py-5 text-black bg-base-100 rounded-md hover:text-[#2550de] hover:bg-base-200 duration-300"
             >
               <div className="w-full h-[250px] flex justify-center items-start">
                 <img src="/assets/brand/intel-1.png" alt="" />
@@ -44,7 +44,7 @@ const Home = () => {
             {/* google */}
             <Link
               to="/google"
-              className="w-full border shadow-md py-5 hover:text-[#2550de] hover:bg-base-200 duration-500"
+              className="w-full border shadow-md py-5 text-black bg-base-100 rounded-md hover:text-[#2550de] hover:bg-base-200 duration-300"
             >
               <div className="w-full h-[250px] flex justify-center items-start">
                 <img
@@ -62,7 +62,7 @@ const Home = () => {
             {/* sony  */}
             <Link
               to="/sony"
-              className="w-full border shadow-md py-5 hover:text-[#2550de] hover:bg-base-200 duration-500"
+              className="w-full border shadow-md py-5 text-black bg-base-100 rounded-md hover:text-[#2550de] hover:bg-base-200 duration-300"
             >
               <div className="w-full h-[250px] flex justify-center items-start">
                 <img src="/assets/brand/sony-1.png" alt="" />
@@ -76,7 +76,7 @@ const Home = () => {
             {/* samsung */}
             <Link
               to="/samsung"
-              className="w-full border shadow-md py-5 hover:text-[#2550de] hover:bg-base-200 duration-500"
+              className="w-full border shadow-md py-5 text-black bg-base-100 rounded-md hover:text-[#2550de] hover:bg-base-200 duration-300"
             >
               <div className="w-full h-[250px] flex justify-center items-start">
                 <img src="/assets/brand/samsung-1.png" alt="mac-logo" />
@@ -90,7 +90,7 @@ const Home = () => {
             {/* dell */}
             <Link
               to="/dell"
-              className="w-full border shadow-md py-5 hover:text-[#2550de] hover:bg-base-200 duration-500"
+              className="w-full border shadow-md py-5 text-black bg-base-100 rounded-md hover:text-[#2550de] hover:bg-base-200 duration-300"
             >
               <div className="w-full h-[250px] flex justify-center items-start">
                 <img src="/assets/brand/dell-1.jpg" alt="" />

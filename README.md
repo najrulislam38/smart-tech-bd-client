@@ -1,6 +1,6 @@
 # Smart Tech BD
 
-## Live Link: [Smart tach bd](https://smart-tech-bd.firebaseapp.com/)
+## Live Link: [Smart tach bd](https://smart-tech-bd.web.app)
 
 ## About This Project.
 
