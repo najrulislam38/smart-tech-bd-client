@@ -2,6 +2,11 @@
 
 ## Live Link: [Smart tach bd](https://smart-tech-bd.web.app)
 
+## Server side Github link: [Server side Github link](https://github.com/najrulislam38/smart-tech-bd-server)
+
+## Used Technologies:
+ - React.js, Taiwlind.css, Firebase, Node.js, Express.js, jsonwebtoken and MongoDB.
+
 ## About This Project.
 
 - At Smart Tech BD, we are passionate about all things technology and electronics. Our mission is to provide a one-stop destination for tech enthusiasts, hobbyists, and professionals seeking the latest gadgets, cutting-edge electronics, and expert insights in the ever-evolving world of technology.
